@@ -1,4 +1,5 @@
 import { Server } from 'hapi';
+import h2o2 from 'h2o2';
 
 const server = new Server({
   host: '0.0.0.0',
@@ -6,16 +7,18 @@ const server = new Server({
 });
 
 const startServer = async () => {
-  server.route({
-    method: 'GET',
-    path: '/',
-    handler: (request, h) => 'Hello, world!'
-  });
+  await server.register(h2o2);
 
   server.route({
-    method: 'GET',
-    path: '/{name}',
-    handler: (request, h) => `Hello, ${encodeURIComponent(request.params.name)}!`
+    handler: {
+      proxy: {
+        uri: process.env.API_URL,
+        passThrough: true,
+        xforward: true
+      }
+    },
+    method: '*',
+    path: '/api/{param*}'
   });
 
   await server.start();

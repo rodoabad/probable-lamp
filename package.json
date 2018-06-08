@@ -19,6 +19,7 @@
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
+    "h2o2": "^8.1.2",
     "hapi": "^17.5.1"
   },
   "devDependencies": {}
