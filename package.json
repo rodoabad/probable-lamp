@@ -1,10 +1,10 @@
 {
   "name": "probable-lamp",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "probable-lamp",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "babel-node ./server/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/rodoabad/probable-lamp/issues"
   },
-  "homepage": "https://github.com/rodoabad/probable-lamp#readme"
+  "homepage": "https://github.com/rodoabad/probable-lamp#readme",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "hapi": "^17.5.1"
+  },
+  "devDependencies": {}
 }
