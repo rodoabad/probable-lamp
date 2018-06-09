@@ -18,7 +18,7 @@ const startServer = async () => {
       }
     },
     method: '*',
-    path: '/api/{param*}'
+    path: '/1.0/{param*}'
   });
 
   await server.start();
